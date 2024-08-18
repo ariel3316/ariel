@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ד"ר בר מצווה - החבילות שלנו</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #f5e6d3;
+            --secondary-color: #e6d7c3;
+            --background-color: #fff9f0;
+            --text-color: #4a4a4a;
+            --accent-color: #d4af37;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Heebo', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            display: inline-block;
+            background-color: var(--primary-color);
+            padding: 1rem;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            background-color: rgba(245, 230, 211, 0.8);
+            padding: 5px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .logo-stars {
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+
+        .packages {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .package {
+            background-color: var(--primary-color);
+            border-radius: 10px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .package:hover {
+            transform: translateY(-5px);
+        }
+
+        .package.featured {
+            border: 2px solid var(--accent-color);
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+        }
+
+        .package h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .package ul {
+            list-style-type: none;
+            margin-bottom: 1rem;
+        }
+
+        .package li {
+            margin-bottom: 0.5rem;
+        }
+
+        .gift {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .packages {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .package {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="https://scontent.ftlv6-1.fna.fbcdn.net/v/t39.30808-6/434126223_920943990032967_3292812986588041111_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=OKObf7-s-4wQ7kNvgHIndzt&_nc_ht=scontent.ftlv6-1.fna&oh=00_AYBoJElNI7g2WuyFFizrUoov5O6A3DQIeFZqBAmI_BXOvA&oe=66C557BC" alt="ד״ר בר מצווה" class="logo-image">
+                <div class="logo-text">ד"ר בר מצווה</div>
+                <div class="logo-stars">★ ★ ★</div>
+            </div>
+        </div>
+
+        <h1>החבילות שלנו</h1>
+
+        <div class="packages">
+            <div class="package">
+                <div class="icon" id="icon-classic"></div>
+                <h2>חבילת קלאסיק</h2>
+                <div class="price">1900 ₪</div>
+                <ul>
+                    <li>תהלוכה מוסיקאלית <span class="highlight">משער האשפות</span> (2 נגנים + שופרות)</li>
+                    <li>חופה לתהלוכה</li>
+                    <li><span class="highlight">רב מזמר</span> להנחיית טקס העלייה לתורה בכותל</li>
+                    <li>מתחם מסודר ברחבת הכותל</li>
+                    <li>בימה</li>
+                    <li>ספר תורה</li>
+                    <li>סידורים</li>
+                    <li>טקס הענקת תעודה מהודרת מטעם רב הכותל</li>
+                </ul>
+                <div class="gift">
+                    מתנה מיוחדת: המדריך לארגון בר מצווה בכותל בכוחות עצמכם
+                </div>
+            </div>
+
+            <div class="package">
+                <div class="icon" id="icon-exclusive"></div>
+                <h2>חבילת אקסקלוסיב</h2>
+                <div class="price">10500 ₪</div>
+                <ul>
+                    <li>פגישת תכנון בר המצווה <span class="highlight">במרכז הארץ</span></li>
+                    <li>ליווי צמוד עד ליום האירוע</li>
+                    <li>בניית לו"ז מפורט ומותאם אישית</li>
+                    <li>אוטובוס צמוד לכל היום הלוך ושוב ממרכז הארץ</li>
+                    <li>מפיק צמוד לאורך כל היום בירושלים</li>
+                    <li>ארוחת בוקר מפנקת <span class="highlight">ליד הכותל</span></li>
+                    <li>תהלוכה מוסיקאלית <span class="highlight">משער האשפות</span> (2 נגנים + שופרות)</li>
+                    <li>אומן -- פייטן / מפעיל מקצועי לתהלוכה שירקיד ויפעיל את כל החוגגים</li>
+                    <li>חופה לתהלוכה</li>
+                    <li>טקס הפרחת בלונים במהלך התהלוכה</li>
+                    <li>פייטן / אומן מיוחד להנחיית טקס העלייה לתורה בכותל או במתחם עזרת ישראל</li>
+                    <li>מתחם מסודר ברחבת הכותל</li>
+                    <li>בימה</li>
+                    <li>ספר תורה</li>
+                    <li>סידורים</li>
+                    <li>טקס הענקת תעודה מהודרת מטעם רב הכותל</li>
+                    <li>עזרה והכוונה במציאת מסעדה לארוחת צהרים</li>
+                </ul>
+                <div class="gift">
+                    מתנה מיוחדת: סידור תפילה מיוחד
+                </div>
+            </div>
+
+            <div class="package featured">
+                <div class="icon" id="icon-premium"></div>
+                <h2>חבילת פרמיום</h2>
+                <div class="price">19500 ₪</div>
+                <ul>
+                    <li>פגישת תכנון בר המצווה <span class="highlight">בבית הלקוח</span></li>
+                    <li>בניית לו"ז מפורט ומותאם אישית</li>
+                    <li>ליווי צמוד עד ליום האירוע</li>
+                    <li>אוטובוס צמוד לכל היום הלוך ושוב ממרכז הארץ</li>
+                    <li>מפיק צמוד לאורך כל היום</li>
+                    <li>ארוחת בוקר משודרגת <span class="highlight">בכרם הסודי / בית מלון / בית קפה</span></li>
+                    <li>תהלוכה מוסיקאלית <span class="highlight">משער ציון</span> (3 נגנים + שופרות)</li>
+                    <li>אומן -- פייטן / מפעיל מקצועי לתהלוכה שירקיד ויפעיל את כל החוגגים</li>
+                    <li>חופה לתהלוכה</li>
+                    <li>טקס הפרחת בלונים במהלך התהלוכה</li>
+                    <li>פייטן / אומן מיוחד להנחיית טקס העלייה לתורה בכותל או במתחם עזרת ישראל</li>
+                    <li>מתחם מסודר ברחבת הכותל</li>
+                    <li>בימה</li>
+                    <li>ספר תורה</li>
+                    <li>סידורים</li>
+                    <li>טקס הענקת תעודה מהודרת מטעם רב הכותל</li>
+                    <li>עזרה והכוונה במציאת מסעדה לארוחת צהרים</li>
+                    <li><span class="highlight">אטרקציה מיוחדת לבחירה</span></li>
+                    <li><span class="highlight">סיור מסעדות מיוחד</span></li>
+                    <li><span class="highlight">טקס לשון הרע לא מדבר אלי</span></li>
+                </ul>
+                <div class="gift">
+                    מתנה מיוחדת: מצגת להקרנה במסעדה על חתן בר המצווה ומשפחתו
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // The script remains unchanged
+    </script>
+</body>
+</html>
